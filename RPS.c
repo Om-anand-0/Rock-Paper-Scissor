@@ -33,7 +33,7 @@ int main()
 {
     char player,comp;
     srand(time(0));
-    int number = rand()%100 + 1;
+    int number = rand()%100;
 
     if(number<33){
         comp = 'r';
@@ -46,17 +46,17 @@ int main()
     }
     printf("Enter 'r' for rock, 'p' for paper and 's' for scissor\n");
     scanf("%c", &player);
+    printf("You chose %c and computer chose %c. \n", player, comp);
     int result = rps(player, comp);
-    if(result ==0){
+    if(result == 0){
         printf("Game draw!\n");
     }
-    else if(result==1){
+    else if(result == 1){
         printf("You win!\n");
     }
     else{
         printf("You Lose!\n");
     }
-    printf("You chose %c and computer chose %c. ", player, comp);
 
     return 0;
 }
